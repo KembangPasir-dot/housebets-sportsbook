@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housebets Sportsbook — Match (prototype)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="match">
+<header class="topbar" id="topbar"></header>
+<div class="layout">
+  <nav class="rail" id="rail" aria-label="Sports"></nav>
+  <main class="main">
+    <div class="searchbar">
+      <span class="mag">⌕</span>
+      <input id="global-search" type="search" placeholder="Search teams, players or leagues" autocomplete="off" aria-label="Search teams, players or leagues">
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <div id="match-content"></div>
+    <p class="footer-note">Prototype entry for the Housebets Contest Labs “Sportsbook is coming” design contest. Sample data only — no real players, no real money, no real bets.</p>
+  </main>
+  <aside class="side" id="side"></aside>
+</div>
+<div class="bottom-bar" id="bottombar"></div>
+<div class="toast" id="toast"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  HB_APP.init('football');
+  var id = new URLSearchParams(location.search).get('id') || 'ars-bha';
+  HB_APP.renderMatch(id);
+</script>
+</body>
+</html>

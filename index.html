@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housebets Sportsbook — Sports Home (prototype)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+<header class="topbar" id="topbar"></header>
+<div class="layout">
+  <nav class="rail" id="rail" aria-label="Sports"></nav>
+  <main class="main">
+    <div class="searchbar">
+      <span class="mag">⌕</span>
+      <input id="global-search" type="search" placeholder="Search teams, players or leagues" autocomplete="off" aria-label="Search teams, players or leagues">
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <nav class="sport-tabs" aria-label="Sports">
+      <a href="index.html" class="active">⌂ Home</a>
+      <a href="live.html"><span class="live-dot"></span> Live <span class="live-count">6</span></a>
+      <a href="football.html">⚽ Soccer</a>
+      <a href="live.html">🎾 Tennis</a>
+      <a href="live.html">🏀 Basketball</a>
+      <a href="live.html">⚾ Baseball</a>
+      <a href="live.html">🏈 American Football</a>
+      <a href="live.html">🎮 Esports</a>
+    </nav>
+    <h2 class="sec">Favourites</h2>
+    <div class="fav-chips" id="fav-chips"></div>
+    <div id="home-content"></div>
+    <p class="footer-note">Prototype entry for the Housebets Contest Labs “Sportsbook is coming” design contest. Sample data only — no real players, no real money, no real bets. Odds are illustrative. Built with vanilla HTML, CSS and JavaScript.</p>
+  </main>
+  <aside class="side" id="side"></aside>
+</div>
+<div class="bottom-bar" id="bottombar"></div>
+<div class="toast" id="toast"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>HB_APP.init('home'); HB_APP.renderHome();</script>
+</body>
+</html>

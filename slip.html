@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housebets Sportsbook — Bet slip &amp; My bets (prototype)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="slip">
+<header class="topbar" id="topbar"></header>
+<div class="layout">
+  <nav class="rail" id="rail" aria-label="Sports"></nav>
+  <main class="main">
+    <div class="page-head"><h1>Bet slip &amp; My bets</h1><span>Singles only · Stakes in USDT</span></div>
+    <div class="place-result" id="place-result" style="display:none;margin:12px 0 0"></div>
+    <h2 class="sec">Bet slip</h2>
+    <div class="card"><div id="slip-list"></div></div>
+    <h2 class="sec">My bets</h2>
+    <div class="tabs" id="mybets-tabs">
+      <button data-tab="open" class="active">Open</button>
+      <button data-tab="settled">Settled</button>
+    </div>
+    <div id="mybets-list"></div>
+    <p class="footer-note">Prototype entry for the Housebets Contest Labs “Sportsbook is coming” design contest. Sample data only — no real players, no real money, no real bets. Cash-out values are illustrative and move with live odds.</p>
+  </main>
+  <aside class="side" id="side"></aside>
+</div>
+<div class="bottom-bar" id="bottombar"></div>
+<div class="toast" id="toast"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  HB_APP.init('slip');
+  HB_APP.renderMyBets('open');
+  document.querySelectorAll('#mybets-tabs button').forEach(function (b) {
+    b.addEventListener('click', function () { HB_APP.renderMyBets(b.getAttribute('data-tab')); });
+  });
+</script>
+</body>
+</html>

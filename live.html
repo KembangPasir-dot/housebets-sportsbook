@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housebets Sportsbook — Live (prototype)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="live">
+<header class="topbar" id="topbar"></header>
+<div class="layout">
+  <nav class="rail" id="rail" aria-label="Sports"></nav>
+  <main class="main">
+    <div class="searchbar">
+      <span class="mag">⌕</span>
+      <input id="global-search" type="search" placeholder="Search teams, players or leagues" autocomplete="off" aria-label="Search teams, players or leagues">
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <div class="page-head"><h1>Live</h1><span>Every match in play, with live score and clock.</span></div>
+    <div class="filters">
+      <select id="f-sport" aria-label="Filter by sport">
+        <option value="All">All sports</option>
+        <option value="Soccer">Soccer</option>
+        <option value="Tennis">Tennis</option>
+        <option value="Basketball">Basketball</option>
+        <option value="Esports">Esports</option>
+      </select>
+      <select id="f-comp" aria-label="Filter by competition">
+        <option value="All">All competitions</option>
+        <option value="epl">Premier League</option>
+        <option value="ucl">Champions League</option>
+        <option value="laliga">LaLiga</option>
+        <option value="seriea">Serie A</option>
+        <option value="bundes">Bundesliga</option>
+        <option value="atp">ATP Finals</option>
+        <option value="nba">NBA</option>
+      </select>
+    </div>
+    <p class="hint">Tip: filter by Esports — nothing is live there, so the page shows Starting soon instead.</p>
+    <div id="live-content" style="margin-top:12px"></div>
+    <p class="footer-note">Prototype entry for the Housebets Contest Labs “Sportsbook is coming” design contest. Sample data only — no real players, no real money, no real bets.</p>
+  </main>
+  <aside class="side" id="side"></aside>
+</div>
+<div class="bottom-bar" id="bottombar"></div>
+<div class="toast" id="toast"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>HB_APP.init('live'); HB_APP.renderLive();</script>
+</body>
+</html>
