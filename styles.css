@@ -46,9 +46,13 @@ input, select { font: inherit; color: var(--text); }
   background: var(--bg2);
   border-bottom: 1px solid var(--line);
 }
-.logo { display: flex; align-items: center; gap: 8px; font-size: 21px; font-weight: 800; letter-spacing: -.02em; color: var(--cyan); white-space: nowrap; }
+.logo { display: flex; align-items: center; gap: 9px; white-space: nowrap; }
 .logo svg { flex: none; }
-.logo b { color: var(--cyan); font-weight: 800; }
+.logo .wordmark { display: flex; flex-direction: column; line-height: 1; gap: 2px; }
+.logo .word { font-size: 21px; font-weight: 800; letter-spacing: -.02em; color: var(--text); }
+.logo .word b { color: var(--cyan); font-weight: 800; }
+.logo .word-sub { font-size: 8.5px; font-weight: 800; letter-spacing: .34em; text-transform: uppercase; color: var(--muted2); }
+.topbar::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: linear-gradient(90deg, var(--cyan), rgba(47,214,195,0) 55%); opacity: .55; pointer-events: none; }
 .prize-chip {
   display: flex; align-items: center; gap: 8px;
   background: var(--panel); border: 1px solid var(--line);
@@ -133,7 +137,10 @@ input, select { font: inherit; color: var(--text); }
 }
 .sport-tabs a:hover { color: var(--text); }
 .sport-tabs a.active { background: var(--panel3); color: var(--text); }
-.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); display: inline-block; }
+.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); display: inline-block; animation: livePulse 2.2s ease-out infinite; }
+@keyframes livePulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,59,92,.55); } 55% { box-shadow: 0 0 0 5px rgba(255,59,92,0); } }
+@keyframes liveGlow { 0%, 100% { opacity: 1; } 50% { opacity: .72; } }
+.match-time .live-badge, .scoreboard .clock { animation: liveGlow 2.2s ease-in-out infinite; }
 .live-count { color: var(--red); font-weight: 800; }
 
 /* ---------- Sections, headings ---------- */
@@ -367,7 +374,7 @@ h2.sec .link { margin-left: auto; color: var(--cyan); font-size: 12.5px; font-we
   .match-row .odds3, .match-row .odds2 { grid-column: 1 / -1; }
   .match-row .more { display: none; }
   .market-body { grid-template-columns: 1fr 1fr; }
-  .logo { font-size: 18px; }
+  .logo .word { font-size: 18px; }
   .sb-team { min-width: 84px; font-size: 12.5px; }
   .sb-score { font-size: 28px; }
 }

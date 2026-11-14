@@ -114,7 +114,7 @@
     return '<svg width="' + (size || 20) + '" height="' + (size || 20) + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + (IC[name] || '') + '</svg>';
   }
   function logoSVG() {
-    return '<svg width="30" height="30" viewBox="0 0 32 32" fill="none"><path d="M3 20c3-6 7-9 11-6s6 1 9-3 3-3 6-2" stroke="#2fd6c3" stroke-width="2.6" stroke-linecap="round"/><path d="M3 25c3-6 7-9 11-6s6 1 9-3 3-3 6-2" stroke="#1fae9e" stroke-width="2.6" stroke-linecap="round" opacity=".65"/><path d="M3 15c3-6 7-9 11-6s6 1 9-3 3-3 6-2" stroke="#7deee0" stroke-width="2.2" stroke-linecap="round" opacity=".5"/></svg>';
+    return '<svg width="30" height="30" viewBox="0 0 32 32" fill="none"><path d="M2 12 C7 6 12 6 16 11 C20 16 25 16 30 10" stroke="#7deee0" stroke-width="2.2" stroke-linecap="round" opacity=".5"/><path d="M2 18 C7 12 12 12 16 17 C20 22 25 22 30 16" stroke="#2fd6c3" stroke-width="2.6" stroke-linecap="round"/><path d="M2 24 C7 18 12 18 16 23 C20 28 25 28 30 22" stroke="#1fae9e" stroke-width="2.6" stroke-linecap="round" opacity=".65"/></svg>';
   }
 
   /* ---------- shell ---------- */
@@ -122,7 +122,7 @@
     var tb = $('#topbar');
     if (tb) {
       tb.innerHTML =
-        '<a class="logo" href="index.html">' + logoSVG() + '<b>Housebets</b></a>' +
+        '<a class="logo" href="index.html">' + logoSVG() + '<span class="wordmark"><span class="word">House<b>bets</b></span><span class="word-sub">Sportsbook</span></span></a>' +
         '<div class="prize-chip"><span class="trophy">' + icon('trophy', 17) + '</span><span>Weekly Prize<b>$50,000.00</b></span></div>' +
         '<div class="spacer"></div>' +
         '<button class="icon-btn" id="top-search-btn" title="Search" aria-label="Search">' + icon('search', 18) + '</button>' +
